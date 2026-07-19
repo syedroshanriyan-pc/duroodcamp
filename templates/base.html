@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Darood Shareef Project</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg shadow-lg"
+       style="
+       background:linear-gradient(90deg,#143522,#1E4D2B,#2B6B3C);
+       border-bottom:2px solid #C8A64B;
+       ">
+
+    <div class="container">
+
+      <a class="navbar-brand fw-bold"
+         href="/"
+         style="
+         color:#E7C96B;
+         font-size:1.4rem;
+         letter-spacing:.5px;
+         text-shadow:0 0 10px rgba(231,201,107,.35);
+         ">
+        🌙 Darood Shareef
+      </a>
+
+      <div>
+
+        {% if session.get('user') %}
+
+          <span class="me-3"
+                style="
+                color:#F8F4E7;
+                font-weight:500;
+                ">
+            Hello, {{ fullname }}
+          </span>
+
+          <a href="{{ url_for('logout') }}"
+             class="btn btn-sm"
+             style="
+             background:#214B30;
+             color:#F8F4E7;
+             border:1px solid #C8A64B;
+             ">
+             Logout
+          </a>
+
+        {% else %}
+
+          <a href="{{ url_for('login') }}"
+             class="btn btn-sm"
+             style="
+             background:#214B30;
+             color:#F8F4E7;
+             border:1px solid #C8A64B;
+             ">
+             Login
+          </a>
+
+          <a href="{{ url_for('register') }}"
+             class="btn btn-sm ms-2"
+             style="
+             background:linear-gradient(90deg,#A77B1F,#D4AF37,#F1D77A);
+             color:#1B2A1B;
+             border:none;
+             font-weight:600;
+             ">
+             Register
+          </a>
+
+        {% endif %}
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- Main Content -->
+  <main class="container my-4">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+
+      <div
+      style="
+      position:fixed;
+      top:10px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:2000;
+      width:min(900px,94vw);
+      ">
+
+        {% for cat, msg in messages %}
+
+        <div class="alert alert-{{ cat }} mb-2"
+             style="
+             border:none;
+             background:#214B30;
+             color:#F8F4E7;
+             border-left:5px solid #D4AF37;
+             ">
+
+          {{ msg }}
+
+        </div>
+
+        {% endfor %}
+
+      </div>
+
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer
+      class="text-center py-3"
+      style="
+      background:#143522;
+      border-top:2px solid #C8A64B;
+      color:#E9E4D4;
+      ">
+
+      © {{ now().year }} Darood Shareef Project
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

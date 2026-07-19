@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+    --primary:#123524;
+    --secondary:#1F4D2B;
+    --surface:#29543A;
+    --surface-light:#346C46;
+
+    --gold-dark:#8B6A18;
+    --gold:#C8A64B;
+    --gold-light:#F4DE8A;
+
+    --text:#F7F3EA;
+    --muted:#D5D5D5;
+
+}
+
+*{
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+    rgba(18,53,36,.85),
+    rgba(18,53,36,.85)
+    ),
+    url('/static/bg.jpg') no-repeat center center fixed;
+
+    background-size:cover;
+
+    color:var(--text);
+
+    margin:0;
+
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar{
+
+    background:linear-gradient(
+    90deg,
+    #123524,
+    #1F4D2B,
+    #29543A
+    ) !important;
+
+    border-bottom:2px solid var(--gold);
+
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+
+}
+
+.navbar-brand{
+
+    color:var(--gold-light)!important;
+
+    font-weight:700;
+
+    text-shadow:0 0 10px rgba(244,222,138,.30);
+
+}
+
+.navbar-brand:hover{
+
+    color:white!important;
+
+}
+
+/* ---------------- CARDS ---------------- */
+
+.card{
+
+    background:rgba(31,77,43,.90);
+
+    border-radius:18px;
+
+    border:1px solid rgba(200,166,75,.30);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35);
+
+    color:var(--text);
+
+}
+
+/* ---------------- INPUT ---------------- */
+
+input,
+.form-control{
+
+    background:#214B30;
+
+    border:1px solid rgba(200,166,75,.35);
+
+    border-radius:12px;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+.form-control::placeholder{
+
+    color:#d9d9d9;
+
+}
+
+input:focus,
+.form-control:focus{
+
+    background:#29543A;
+
+    color:white;
+
+    border-color:var(--gold-light);
+
+    box-shadow:0 0 0 .2rem rgba(200,166,75,.20);
+
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn-warning,
+.btn-custom{
+
+    background:linear-gradient(
+    90deg,
+    #8B6A18,
+    #C8A64B,
+    #F4DE8A
+    );
+
+    border:none;
+
+    color:#143522;
+
+    font-weight:700;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.btn-warning:hover,
+.btn-custom:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 18px rgba(244,222,138,.45);
+
+    filter:brightness(1.05);
+
+}
+
+.btn-success{
+
+    background:var(--secondary);
+
+    border:1px solid var(--gold);
+
+}
+
+.btn-success:hover{
+
+    background:var(--surface-light);
+
+}
+
+/* ---------------- OUTLINE BUTTON ---------------- */
+
+.btn-outline-light{
+
+    color:var(--gold-light);
+
+    border:1px solid var(--gold);
+
+}
+
+.btn-outline-light:hover{
+
+    background:var(--gold);
+
+    color:#143522;
+
+}
+
+/* ---------------- PROGRESS ---------------- */
+
+.progress{
+
+    height:30px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#173926;
+
+}
+
+.progress-bar{
+
+    background:linear-gradient(
+    90deg,
+    #8B6A18,
+    #C8A64B,
+    #F4DE8A,
+    #C8A64B,
+    #8B6A18
+    );
+
+    color:#123524;
+
+    font-weight:700;
+
+    transition:width .7s ease;
+
+}
+
+/* ---------------- COUNT BOX ---------------- */
+
+.count-box{
+
+    background:linear-gradient(
+    135deg,
+    rgba(34,77,48,.95),
+    rgba(44,96,59,.92)
+    );
+
+    color:white;
+
+    border:1px solid rgba(200,166,75,.35);
+
+    border-radius:14px;
+
+    padding:15px;
+
+    margin:15px 0;
+
+}
+
+.gold-text{
+
+    color:var(--gold-light);
+
+    font-weight:700;
+
+}
+
+/* ---------------- TIMER ---------------- */
+
+.timer{
+
+    color:var(--gold-light);
+
+    font-weight:600;
+
+}
+
+/* ---------------- LINKS ---------------- */
+
+a{
+
+    color:var(--gold-light);
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    color:white;
+
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+
+    background:rgba(20,53,36,.95);
+
+    color:var(--text);
+
+    border-top:2px solid var(--gold);
+
+}
+
+footer a{
+
+    color:var(--gold-light);
+
+}
+
+footer a:hover{
+
+    color:white;
+
+}
+
+/* ---------------- ALERT ---------------- */
+
+.alert{
+
+    border:none;
+
+    border-left:4px solid var(--gold);
+
+    border-radius:10px;
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+        width:100%!important;
+
+    }
+
+    h1{
+
+        font-size:1.6rem!important;
+
+    }
+
+    h2{
+
+        font-size:1.4rem!important;
+
+    }
+
+    h3{
+
+        font-size:1.2rem!important;
+
+    }
+
+    .count-box{
+
+        font-size:1rem;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        margin-bottom:10px;
+
+    }
+
+    footer{
+
+        font-size:.92rem;
+
+        padding:16px;
+
+    }
+
+}
