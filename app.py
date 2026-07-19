@@ -11,7 +11,7 @@ app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SECURE=True,
     SESSION_COOKIE_SAMESITE="Lax",
-    PERMANENT_SESSION_LIFETIME=timedelta(days=30),
+    PERMANENT_SESSION_LIFETIME=timedelta(days=60),
 )
 
 bcrypt = Bcrypt(app)
@@ -20,15 +20,15 @@ bcrypt = Bcrypt(app)
 MONGO_URI = os.getenv("MONGO_URI")
 app.secret_key = os.getenv("SECRET_KEY")
 # Cookie/session lifetime → 30 days
-app.permanent_session_lifetime = timedelta(days=30)
+app.permanent_session_lifetime = timedelta(days=60)
 
 client = MongoClient(MONGO_URI)
 db = client["darood_2026"]
 users = db["users"]
 recitations = db["recitations"]
 
-TARGET = 1500000
-EVENT_DATE = datetime(2026, 8, 25, 16, 30, 0)
+TARGET = 1501000
+EVENT_DATE = datetime(2026, 8, 25, 17, 0, 0)
 
 
 @app.route("/")
