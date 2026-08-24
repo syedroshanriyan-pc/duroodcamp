@@ -28,7 +28,7 @@ users = db["users"]
 recitations = db["recitations"]
 
 TARGET = 1501000
-EVENT_DATE = datetime(2026, 8, 25, 17, 0, 0)
+EVENT_DATE = datetime(2026, 8, 26, 5, 0, 0)
 
 
 @app.route("/")
