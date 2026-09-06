@@ -23,12 +23,12 @@ app.secret_key = os.getenv("SECRET_KEY")
 app.permanent_session_lifetime = timedelta(days=60)
 
 client = MongoClient(MONGO_URI)
-db = client["darood_2026"]
+db = client["darood11_2026"]
 users = db["users"]
 recitations = db["recitations"]
 
-TARGET = 1501000
-EVENT_DATE = datetime(2026, 8, 26, 5, 0, 0)
+TARGET = 1200000
+EVENT_DATE = datetime(2026, 9, 23, 5, 0, 0)
 
 
 @app.route("/")
