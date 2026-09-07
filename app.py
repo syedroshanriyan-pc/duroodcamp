@@ -27,7 +27,7 @@ db = client["darood11_2026"]
 users = db["users"]
 recitations = db["recitations"]
 
-TARGET = 1200000
+TARGET = 1100000
 EVENT_DATE = datetime(2026, 9, 23, 5, 0, 0)
 
 
